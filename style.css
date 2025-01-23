@@ -1,0 +1,75 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #f3d0e9, #a1c4fd, #c2e9fb, #ffdde1);
+    background-size: 400% 400%;
+    animation: bgAnimation 15s ease infinite;
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    color: #1272df; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px black;
+}
+
+.fact-section {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 600px;
+    background: #ffffff; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.fact-section h2 {
+    font-size: 1.8em;
+    color: #0078d4; 
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.1); /
+}
+
+.fact-section p {
+    font-size: 1.2em;
+    color: #555; 
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f8f8f8; 
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.6); 
+    line-height: 1.6;
+}
+
+.fact-section:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /
+}
+
+@keyframes bgAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 0%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
