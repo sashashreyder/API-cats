@@ -27,9 +27,26 @@ function fetchUselessFact() {
         });
 }
 
+function fetchWeather() {
+    fetch('https://wttr.in/New+York?format=%C+%t')
+        .then(response => response.text()) // Convert response to plain text
+        .then(data => {
+            // Display the weather data
+            const weatherElement = document.getElementById('weather');
+            weatherElement.textContent = `London Weather: ${data}`;
+        })
+        .catch(error => {
+            // Handle errors
+            console.error("Error fetching weather data:", error);
+            const weatherElement = document.getElementById('weather');
+            weatherElement.textContent = "Failed to load weather data. Please try again.";
+        });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     fetchCatFact();
     fetchUselessFact();
+    fetchWeather();
 });
 
 
