@@ -28,20 +28,18 @@ function fetchUselessFact() {
 }
 
 function fetchWeather() {
-    fetch('https://wttr.in/New+York?format=%C+%t')
-        .then(response => response.text()) 
+    fetch('https://wttr.in/?format=%C+%t')  
+        .then(response => response.text())
         .then(data => {
-            
             const weatherElement = document.getElementById('weather');
-            weatherElement.textContent = `London Weather: ${data}`;
+            weatherElement.textContent = `Current Weather: ${data}`; 
         })
         .catch(error => {
-            
             console.error("Error fetching weather data:", error);
-            const weatherElement = document.getElementById('weather');
-            weatherElement.textContent = "Failed to load weather data. Please try again.";
+            weatherElement.textContent = "Failed to load weather data.";
         });
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchCatFact();
