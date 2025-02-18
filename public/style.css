@@ -16,14 +16,27 @@ h1 {
     margin-bottom: 20px;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px; 
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
 .fact-section {
-    width: 600px;
-    margin: 20px auto;
+    width: 500px;
+    min-height: 500px; 
     padding: 20px;
     border-radius: 10px;
     background: #ffffff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .fact-section h2 {
@@ -40,6 +53,17 @@ h1 {
     border-radius: 5px;
     background-color: #f8f8f8;
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.6);
+    width: 80%;
+}
+
+
+.fact-image {
+    width: 250px;
+    height: 200px;  
+    object-fit: cover; 
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 button {
@@ -52,27 +76,26 @@ button {
     font-size: 16px;
     margin-top: 10px;
     transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 button:hover {
     background: #005bb5;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .fact-section {
         width: 90%;
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 32px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 8px 12px;
     }
 }
+
 
 
 
