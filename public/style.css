@@ -2,73 +2,78 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 20px;
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #f3d0e9, #a1c4fd, #c2e9fb, #ffdde1);
-    background-size: 400% 400%;
-    animation: bgAnimation 15s ease infinite;
-    color: #333;
+    background: linear-gradient(to bottom, #4a90e2, #d8e8ff);
+    color: #333333;
     text-align: center;
 }
 
 h1 {
-    font-size: 3em;
-    color: #1272df; 
+    font-size: 40px;
+    color: #0044cc;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 1px 1px black;
+    margin-bottom: 20px;
 }
 
 .fact-section {
+    width: 600px;
     margin: 20px auto;
     padding: 20px;
-    border-radius: 20px;
-    max-width: 600px;
-    background: #ffffff; 
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
-    text-align: center; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .fact-section h2 {
-    font-size: 1.8em;
-    color: #0078d4; 
-    margin-bottom: 15px;
-    text-transform: capitalize;
+    font-size: 24px;
+    color: #0044cc;
     font-weight: bold;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.1); /
+    margin-bottom: 10px;
 }
 
 .fact-section p {
-    font-size: 1.2em;
-    color: #555; 
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #f8f8f8; 
-    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.6); 
-    line-height: 1.6;
+    font-size: 18px;
+    color: #555555;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.6);
 }
 
-.fact-section:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /
+button {
+    background: #0078d4;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background 0.3s;
 }
 
-@keyframes bgAnimation {
-    0% {
-        background-position: 0% 50%;
+button:hover {
+    background: #005bb5;
+}
+
+@media (max-width: 700px) {
+    .fact-section {
+        width: 90%;
+        padding: 15px;
     }
-    25% {
-        background-position: 50% 0%;
+
+    h1 {
+        font-size: 32px;
     }
-    50% {
-        background-position: 100% 50%;
-    }
-    75% {
-        background-position: 50% 100%;
-    }
-    100% {
-        background-position: 0% 50%;
+
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
     }
 }
+
 
 
 

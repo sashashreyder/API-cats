@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Fun Facts</title>
 </head>
-
 <body>
     <h1>Fun Facts</h1>
 
     <section class="fact-section" id="cat-fact-section">
-        <h2>Cat Fact</h2>
+        <h2>🐱 Cat Fact</h2>
         <p id="cat-fact">Loading cat fact...</p>
+        <button onclick="fetchCatFact()">🔄 New Fact</button>
     </section>
 
     <section class="fact-section" id="useless-fact-section">
-        <h2>Random Useless Fact</h2>
+        <h2>🎲 Random Fact</h2>
         <p id="useless-fact">Loading useless fact...</p>
+        <button onclick="fetchUselessFact()">🔄 New Fact</button>
     </section>
 
     <section class="fact-section" id="weather-section">
-        <h2>Weather Forecast</h2>
+        <h2>🌦️ Weather Forecast</h2>
         <p id="weather">Loading weather data...</p>
+        <button onclick="fetchWeather()">🔄 Refresh</button>
     </section>
 
     <script src="script.js" defer></script>
 </body>
-
 </html>
+
 
 
 

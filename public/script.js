@@ -1,44 +1,50 @@
-
-function fetchCatFact() {
-    fetch('https://catfact.ninja/fact')
-        .then(response => response.json())
-        .then(data => {
-            const catFactElement = document.getElementById('cat-fact');
-            catFactElement.textContent = data.fact;
-        })
-        .catch(error => {
-            console.error("Error fetching cat fact:", error);
-            const catFactElement = document.getElementById('cat-fact');
-            catFactElement.textContent = "Failed to load a cat fact. Please try again.";
-        });
+async function fetchCatFact() {
+    try {
+        const response = await fetch('https://catfact.ninja/fact');
+        const data = await response.json();
+        document.getElementById('cat-fact').textContent = data.fact;
+    } catch (error) {
+        console.error("Error fetching cat fact:", error);
+        document.getElementById('cat-fact').textContent = "Failed to load a cat fact. Try again.";
+    }
 }
 
-function fetchUselessFact() {
-    fetch('https://uselessfacts.jsph.pl/random.json?language=en')
-        .then(response => response.json())
-        .then(data => {
-            const uselessFactElement = document.getElementById('useless-fact');
-            uselessFactElement.textContent = data.text;
-        })
-        .catch(error => {
-            console.error("Error fetching useless fact:", error);
-            const uselessFactElement = document.getElementById('useless-fact');
-            uselessFactElement.textContent = "Failed to load a useless fact. Please try again.";
-        });
+async function fetchUselessFact() {
+    try {
+        const response = await fetch('https://uselessfacts.jsph.pl/random.json?language=en');
+        const data = await response.json();
+        document.getElementById('useless-fact').textContent = data.text;
+    } catch (error) {
+        console.error("Error fetching useless fact:", error);
+        document.getElementById('useless-fact').textContent = "Failed to load a useless fact. Try again.";
+    }
 }
 
-function fetchWeather() {
-    fetch('https://wttr.in/?format=%C+%t')  
-        .then(response => response.text())
-        .then(data => {
-            const weatherElement = document.getElementById('weather');
-            weatherElement.textContent = `Current Weather: ${data}`; 
-        })
-        .catch(error => {
-            console.error("Error fetching weather data:", error);
-            weatherElement.textContent = "Failed to load weather data.";
+async function fetchWeather() {
+    try {
+        if (!navigator.geolocation) {
+            throw new Error("Geolocation is not supported by your browser.");
+        }
+
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weathercode`);
+            const data = await response.json();
+
+            const temperature = data.current.temperature_2m;
+            
+            document.getElementById('weather').textContent = `🌍 Temperature: ${temperature}°C`;
+        }, () => {
+            document.getElementById('weather').textContent = "Failed to get location.";
         });
+    } catch (error) {
+        console.error("Error fetching weather:", error);
+        document.getElementById('weather').textContent = "Failed to load weather.";
+    }
 }
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
