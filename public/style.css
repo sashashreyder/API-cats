@@ -98,10 +98,40 @@ button:hover {
         align-items: center;
     }
 
+    h1 {
+        margin-bottom: 30px;
+    }
+
     .fact-section {
         width: 90%;
+        height: auto; /* Make it adjust dynamically */
+        padding: 20px;
+    }
+
+    .fact-section p {
+        font-size: 16px; 
+        width: 90%;
+        padding: 10px;
+    }
+
+    .fact-image {
+        width: 80%;
+        height: auto;
+        max-width: 300px; 
+    }
+
+    button {
+        width: 150px; 
+        padding: 12px;
+        font-size: 14px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        gap: 5px;
     }
 }
+
 
 
 
