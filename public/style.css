@@ -52,8 +52,9 @@ h1 {
 }
 
 h2.randomFact {
-    text-shadow: 1px 1px 2px rgba(1, 1, 1, 0.5), 
-                 0px 0px 3px rgba(22, 22, 22, 0.576); 
+    color: #6d1e98; 
+    text-shadow: 1px 1px 0px rgba(118, 108, 108, 0.5), 
+                 1px 0px 1px rgba(217, 206, 206, 0.576); 
 }
 
 .fact-section p {
